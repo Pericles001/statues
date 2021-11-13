@@ -6,7 +6,7 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
 
-const light = new THREE.AmbientLight( 0x404040 ); // soft white light
+const light = new THREE.AmbientLight( 0xffffff, 0.5 ); // soft white light
 scene.add( light );
 
 /*
@@ -21,6 +21,7 @@ camera.position.z = 5;
 const loader = new THREE.GLTFLoader();
 loader.load("../models/scene.gltf", function(gltf){
     scene.add(gltf.scene);
+    gltf.scene.scale.set(.4, .4, .4);
 });
 
 function animate() {
@@ -29,3 +30,12 @@ function animate() {
 	renderer.render( scene, camera );
 }
 animate();
+
+window.addEventListener('resize', onWindowResize, false);
+
+function onWindowResize(){
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    render.setSize( window.innerWidth, window.innerHeight)
+}
