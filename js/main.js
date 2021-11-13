@@ -32,7 +32,11 @@ class Doll {
         })
     }
     lookBack() {
-        this.doll.rotation.y = 1;
+        this.doll.rotation.y = -3.15;
+    }
+
+    lookForwad(){
+        this.doll.rotation.y = 0;
     }
 }
 
