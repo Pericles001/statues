@@ -82,8 +82,13 @@ class Player{
 this.playerInfo.velocity = .03
     }
 
+    stop(){
+        //his.playerInfo.velocity = 0
+        gsap.to(this.playerInfo, {velocity: 0, duration: .1})
+    }
+
     update(){
-        this.playerInfo.positionX *= this.playerInfo.velocity
+        this.playerInfo.positionX -= this.playerInfo.velocity
         this.player.position.x = this.playerInfo.positionX
     }
 }
@@ -112,3 +117,14 @@ function onWindowResize() {
 
     render.setSize(window.innerWidth, window.innerHeight);
 }
+
+window.addEventListener('keydown', (e) => {
+    if(e.key == "ArrowUp"){
+        player.run()
+    }
+})
+window.addEventListener('keyup', (e) => {
+    if(e.key == "ArrowUp"){
+        player.stop()
+    }
+})
