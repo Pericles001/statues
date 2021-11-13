@@ -17,13 +17,20 @@ const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
 */
 
+function createCube(){
+    const geometry = new THREE.BoxGeometry();
+const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+const cube = new THREE.Mesh( geometry, material );
+scene.add( cube );
+}
+
 camera.position.z = 5;
 
-const loader = new THREE.GLTFLoader();
+const loader = new THREE.GLTFLoader()
 
 
 class Doll {
-    constructor(model, position, rotation) {
+    constructor(){
         loader.load("../models/scene.gltf", (gltf) => {
             scene.add(gltf.scene);
             gltf.scene.scale.set(.4, .4, .4);
@@ -31,24 +38,31 @@ class Doll {
             this.doll = gltf.scene;
         })
     }
-    lookBack() {
-        this.doll.rotation.y = -3.15;
+     lookBackward(){
+        //this.doll.rotation.y = -3.15
+        gsap.to(this.doll.rotation, {y: -3.15, duration: .45})
     }
 
-    lookForwad(){
-        this.doll.rotation.y = 0;
+    lookForward(){
+        gsap.to(this.doll.rotation, {y: 0, duration: .45})
     }
 }
 
-let doll = new Doll();
+function createTrack(){
+createCube();
+}
+createTrack();
+
+let doll = new Doll()
+
 setTimeout(() => {
-    doll.lookBack();
+    doll.lookBackward()
 }, 1000);
 
 function animate() {
     renderer.render(scene, camera);
     requestAnimationFrame(animate);
-   
+
 }
 animate();
 
