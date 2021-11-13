@@ -64,11 +64,16 @@ createTrack();
 
 class Player{
     constructor(){
-        this.position = start_position;
-        this.speed = .1;
-        this.doll = new Doll();
+        const geometry = new THREE.SphereGeometry( .3, 32, 16 );
+        const material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
+        const sphere = new THREE.Mesh( geometry, material );
+        sphere.position.z = 1
+        sphere.position.x = start_position
+        scene.add( sphere );
     }
 }
+
+const player = new Player()
 
 let doll = new Doll()
 
@@ -79,7 +84,7 @@ setTimeout(() => {
 function animate() {
     renderer.render(scene, camera);
     requestAnimationFrame(animate);
-
+ 
 }
 animate();
 
