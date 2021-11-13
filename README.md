@@ -34,7 +34,7 @@ The current game follows the same steps from the squid game version.
  
 </div>
 
-![](https://ichi.pro/assets/images/max/724/1*6s_Dkfeldg35ySmAp0tPkQ.png)
+![](https://user-images.githubusercontent.com/30949385/58746251-e0446a00-8479-11e9-9396-4829edcf6afa.png)
 
 ## Credits
 
