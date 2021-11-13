@@ -13,6 +13,8 @@ scene.add( cube );
 
 camera.position.z = 5;
 
+const loader = new GLTFLoader();
+
 function animate() {
 	requestAnimationFrame( animate );
     cube.rotation.z += 0.01;
