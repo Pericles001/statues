@@ -23,10 +23,22 @@ The current game follows the same steps from the squid game version.
 -  Doll turns front till countdown starts, player cannot move 
 -  If player breaks one of these rules it is game over!
 
+
+
 ## Technologies
 
 
 ![](https://user-images.githubusercontent.com/30949385/58746251-e0446a00-8479-11e9-9396-4829edcf6afa.png)
+
+## Usage
+
+Follow these steps to run project in local:
+
+* Git clone https://github.com/Pericles001/statues.git
+* cd statues
+* open your text editor (vscode / atom )
+* start live server
+
 
 ## Credits
 
