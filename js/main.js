@@ -24,7 +24,9 @@ function createCube(size, positionX) {
     const geometry = new THREE.BoxGeometry(size.w,  size.h, size.d);
     const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
     const cube = new THREE.Mesh(geometry, material);
+    cube.position = positionX;
     scene.add(cube);
+    
 }
 
 camera.position.z = 5;
@@ -52,7 +54,8 @@ class Doll {
 }
 
 function createTrack() {
-    createCube({w: .2, h: 1.5, d: 1}, -3 );
+    createCube({w: .2, h: 1.5, d: 1}, start_position);
+    createCube({w: .2, h: 1.5, d: 1}, end_position);
 }
 createTrack();
 
