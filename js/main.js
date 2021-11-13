@@ -34,6 +34,9 @@ camera.position.z = 5;
 
 const loader = new THREE.GLTFLoader()
 
+function delay(ms){
+    return new Promise( resolve => setTimeout(resolve, ms) );
+}
 
 class Doll {
     constructor() {
@@ -51,6 +54,14 @@ class Doll {
 
     lookForward() {
         gsap.to(this.doll.rotation, { y: 0, duration: .45 })
+    }
+
+    start(){
+        this.lookBackward()
+        await delay(1000)
+        this.lookForward()
+        await delay(1000)
+        this.start()
     }
 }
 
