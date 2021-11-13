@@ -62,6 +62,14 @@ function createTrack() {
 }
 createTrack();
 
+class Player{
+    constructor(){
+        this.position = start_position;
+        this.speed = .1;
+        this.doll = new Doll();
+    }
+}
+
 let doll = new Doll()
 
 setTimeout(() => {
