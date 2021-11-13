@@ -145,7 +145,12 @@ function startGame() {
     progressBar.position.y = 3.35
     gsap.to(progressBar.scale, { x: 0, duration: TIMIT_LIMIT, ease: "none" })
     doll.start()
-
+setTimeout(()=> {
+if (gameStat != "over"){
+    text.innerText = "You ran out of time!"
+    gameStat = "over"
+}
+}, TIMIT_LIMIT * 1000)
 }
 
 init()
