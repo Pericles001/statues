@@ -70,6 +70,21 @@ class Player{
         sphere.position.z = 1
         sphere.position.x = start_position
         scene.add( sphere );
+        this.player = sphere
+        this.playerInfo = {
+            positionX: start_position,
+            velocity: 0
+
+        }
+    }
+
+    run(){
+this.playerInfo.velocity = .03
+    }
+
+    update(){
+        this.playerInfo.positionX *= this.playerInfo.velocity
+        this.player.position.x = this.playerInfo.positionX
     }
 }
 
@@ -84,6 +99,7 @@ setTimeout(() => {
 function animate() {
     renderer.render(scene, camera);
     requestAnimationFrame(animate);
+    player.update()
  
 }
 animate();
